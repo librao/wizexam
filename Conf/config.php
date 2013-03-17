@@ -2,8 +2,8 @@
 
 $db_config = include_once 'db.inc.php';
 $config = array(
-	'LAYOUT_ON' => true, // 开启模板布局
-    'LAYOUT_NAME' => 'base',
+	//'LAYOUT_ON' => true, // 开启模板布局
+    //'LAYOUT_NAME' => 'base',
 
 	'URL_ROUTER_ON' => TRUE,
 	'URL_ROUTE_RULES' => array(
@@ -14,7 +14,7 @@ $config = array(
 	 	* 后台管理部分
 	 	*/
 		// 后台首页
-		'admin2lib' => array('Admin/Index/index'),
+		'admin2lib' => array('Admin/index'),
 	),
     'URL_MODEL' => 2
 );
