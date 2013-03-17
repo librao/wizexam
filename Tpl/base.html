@@ -4,15 +4,17 @@
         <title>Wiz Exam CMS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
-        <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/lib/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/lib/css/prettify.css" rel="stylesheet" type="text/css">
+        <link href="__PUBLIC__/src/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css">
         <link href="__PUBLIC__/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="__PUBLIC__/css/style.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/style.css" rel="stylesheet" media="screen">
     </head>
     <body>
         <div class="container-narrow">
             <div class="masthead">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="/">Home</a></li>
                     <!--<li><a href="#">Admin</a></li>-->
                 </ul>
                 <h3 class="muted">WIZExam CMS</h3>
@@ -52,7 +54,11 @@
                 </div>
             </block>
         </div>
-        <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="__PUBLIC__/js/bootstrap.min.js"></script>
-    </body>
+        <script src="__PUBLIC__/lib/js/wysihtml5-0.3.0.js"></script>
+        <script src="__PUBLIC__/lib/js/jquery-1.7.2.min.js"></script>
+        <script src="__PUBLIC__/lib/js/prettify.js"></script>
+        <script src="__PUBLIC__/lib/js/bootstrap.min.js"></script>
+        <script src="__PUBLIC__/src/bootstrap-wysihtml5.js"></script>
+    <block name="javascript"></block>
+</body>
 </html>

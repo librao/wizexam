@@ -1,0 +1,39 @@
+<extend name="./Tpl/base.html" />
+
+<block name="stylesheets">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/scr/bootstrap-wysihtml5.css" />
+</block>
+
+<block name="content">
+    <form action="{:U('Admin/insert')}" method="post" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputTitle">Title</label>
+            <div class="controls">
+                <input type="text" id="inputTitle" name="title" placeholder="Title">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputSummary">Summary</label>
+            <div class="controls">
+                <textarea id="inputSummary" rows="3" name="summary"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputContent">Content</label>
+            <div class="controls">
+                <textarea id="inputContent" style="width:520px; height: 200px" name="content"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-large btn-primary">Post</button>
+            </div>
+        </div>
+    </form>
+</block>
+
+<block name="javascript">
+    <script type="text/javascript">
+        jQuery('#inputContent').wysihtml5();
+    </script>
+</block>
