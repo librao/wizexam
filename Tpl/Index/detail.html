@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="span6">
+		<div class="my_block">
+			<h1><strong>{$news_info.title}</strong></h1>
+			<p>{$news_info.content}</p>
+			<span style="padding:0 5px;"><i class="icon-eye-open"></i>View</span><strong>{$news_info.view}</strong>
+			<span style="padding:0 5px;">
+				<i class="icon-thumbs-up"></i><a href="javascript:;" onclick="addLike('{$news_info.id}','{$news_info.like}')">Like</a>
+			</span><strong id="like_num">{$news_info.like}</strong>
+			<section class="inner_section">
+				<div class="row">
+					<div class="span6">
+						<h3><strong>相关链接</strong></h3>
+						<ul class="unstyled features">
+							<volist name="link_list" id="vo">
+							<li><i class="icon-tag"></i> <strong>链接{$key+1}:</strong> <a href="{$vo.link}" target="_blank">{$vo.link}</a></li>
+							<li><hr></li>
+							</volist>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<span style="float:right;"><a href="/">返回列表</a></span>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

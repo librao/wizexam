@@ -12,37 +12,17 @@
         <div class="container-narrow">
             <div class="masthead">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="/">Home</a></li>
                     <!--<li><a href="#">Admin</a></li>-->
                 </ul>
                 <h3 class="muted">WIZExam CMS</h3>
+				<p>如需要对新闻进行管理，<a href="./admin2lib" title="Login">点此</a>进入管理</p>
             </div>
             <hr>
 
             <block name="content">
-                <div class="row-fluid marketing">
-                    <div class="span6">
-                        <h4><a href="#">Subheading</a><div class="digg"><button class="btn btn-mini" type="button">Digg 0</button></div></h4>
-                        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-                        <h4>Subheading<div class="digg"><button class="btn btn-mini btn-primary" type="button">Digg 0</button></div></h4>
-                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-                        <h4>Subheading</h4>
-                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-                    </div>
-
-                    <div class="span6">
-                        <h4>Subheading</h4>
-                        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                        <h4>Subheading</h4>
-                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-                        <h4>Subheading</h4>
-                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-                    </div>
-                </div>
+                {__CONTENT__}{/***模版布局核心内容***/}
 
                 <hr>
             </block>
@@ -54,5 +34,6 @@
         </div>
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+        <script src="__PUBLIC__/js/common.js"></script>
     </body>
 </html>

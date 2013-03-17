@@ -1,1 +1,14 @@
-<extend name="./Tpl/base.html" />
+<section>
+	<div id="portfolio" class="row">
+        
+		<volist name="list" id="vo">
+		<div class="span3 block">
+			<div class="descr">
+				<h4><a href="/detail/{$vo.id}">{$vo.title}</a></h4>
+				<p>{$vo.summary}</p>
+			 </div>
+		</div>
+		</volist>
+
+	</div>
+</section>
