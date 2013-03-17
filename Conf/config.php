@@ -31,7 +31,7 @@ $global_config =  array(
     //'TMPL_R_DELIM'			=> '}>',	//模版编译结束
 
 	// 函数库加载
-    'LOAD_EXT_FILE' => 'libtool,user,page,html,cache,template,wiki,group'
+    'LOAD_EXT_FILE' => 'libtool,user'
 
 );
 

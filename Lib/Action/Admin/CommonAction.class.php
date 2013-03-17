@@ -9,12 +9,9 @@ class CommonAction extends GlobalAction {
         parent::_initialize();
         
         if(!is_login()) {
-            $this->redirect('/login');
+            $this->redirect('/login?request_url=admin2lib');
             exit();
         }
-
-		$menu = list_to_tree(get_menu_node_cache());
-		$this->assign('menu',$menu);
     }
 }
 ?>

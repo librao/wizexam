@@ -7,6 +7,11 @@ class GlobalAction extends Action {
 		// 加载项目配置数据
 		load_app_option();
 		
+		// 自动登录
+		if(!is_login())
+			if(cookie('user_auth') != null){
+				$this->__autoLogin();
+			}
 		// 过滤$_POST数组中的前后空格
 		foreach ($_POST as $k => $v){
 			if(!is_array($v)){
@@ -38,6 +43,30 @@ class GlobalAction extends Action {
 	protected function _display($title = null, $template_file = '') {
 		$this->_assign_define($title);
         $this->display($template_file);
+	}
+
+	/**
+	 * CommonAction::__autoLogin()
+	 * 用户自动登录
+	 * @return void
+	 */
+	private function __autoLogin() {
+		$auth = cookie('user_auth');
+		if($auth == null && empty($auth))
+			return false;
+		else {
+			import('ORG.Crypt.Crypt');
+			$auth = str_replace('%CRYPT%', '', Crypt::decrypt($auth, C('CRYPT_KEY'), true));
+			$model = D('User');
+			$where['user_login'] = array('eq', $auth);
+			$where['status'] = array('eq', 1);
+			$uid = $model->field('id')->where($where)->find();
+			if($uid != null) {
+				$model->login($uid['id'], false);
+			}else{
+				cookie('user_auth', null);
+			}
+		}
 	}
 	
 	/**

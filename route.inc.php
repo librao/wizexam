@@ -13,6 +13,7 @@ return array(
 		'admin2lib' => array('Admin/Index/index'),
 		// 用户登陆
 		'login' => array('Admin/Public/login'),
+		'logout' => array('Admin/Public/logout'),
 	
 		/**
 	 	* 其它部分
