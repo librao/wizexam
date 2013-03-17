@@ -1,0 +1,61 @@
+<extend name="./Tpl/base.html" />
+
+<block name="stylesheets">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/scr/bootstrap-wysihtml5.css" />
+</block>
+
+<block name="content">
+    <form action="{$action}" method="post" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputTitle">Title<span style="color:red;">*</span></label>
+            <div class="controls">
+                <input type="text" id="inputTitle" name="title" value="{$news.title}" placeholder="Title">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputSummary">Summary</label>
+            <div class="controls">
+                <textarea id="inputSummary" rows="3" name="summary">{$news.summary}</textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputContent">Content<span style="color:red;">*</span></label>
+            <div class="controls">
+                <textarea id="inputContent" style="width:520px; height: 200px" name="content">{$news.content}</textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Links</label>
+            <div class="controls fn_link_group">
+                <div>
+                    <button type="submit" class="btn btn-link fn_add_link">Add Links</button>
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <if condition="$news">
+                    <input type="hidden" name="id" value="{$news.id}" />
+                    <button type="submit" class="btn btn-large btn-primary">Edit</button>
+                    <else />
+                    <button type="submit" class="btn btn-large btn-primary">Add</button>
+                </if>
+            </div>
+        </div>
+    </form>
+</block>
+
+<block name="javascript">
+    <script type="text/javascript">
+        jQuery('#inputContent').wysihtml5();
+        $('.fn_add_link').click(function(){
+            var html = '<div class="link_row"><input type="text" name="links[]" placeholder="Links"><a class="fn_del_row" href="javascript:void(0)">Delete Links</a></div>';
+            $('.fn_link_group').append(html);
+            return false;
+        });
+        $('.fn_link_group').delegate('a.fn_del_row', 'click', function(){
+            $(this).parent().remove();
+            return false;
+        });
+    </script>
+</block>
