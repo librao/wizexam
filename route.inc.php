@@ -11,6 +11,8 @@ return array(
 	 	*/
 		// 后台首页
 		'admin2lib' => array('Admin/Index/index'),
+		// 用户登陆
+		'login' => array('Admin/Public/login'),
 	
 		/**
 	 	* 其它部分

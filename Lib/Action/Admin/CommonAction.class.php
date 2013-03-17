@@ -8,9 +8,9 @@ class CommonAction extends GlobalAction {
     public function _initialize() {
         parent::_initialize();
         
-        if(!is_admin()) {
-            //$this->redirect('/');
-            //exit();
+        if(!is_login()) {
+            $this->redirect('/login');
+            exit();
         }
 
 		$menu = list_to_tree(get_menu_node_cache());

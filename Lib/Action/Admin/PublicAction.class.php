@@ -1,5 +1,5 @@
 <?php
-class PublicAction extends CommonAction {
+class PublicAction extends GlobalAction {
 	/**
 	 * PublicAction::login()
 	 * 用户登陆

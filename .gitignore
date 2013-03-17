@@ -1,1 +1,3 @@
 /Runtime/*
+/db.inc.php
+/Tpl/__Admin/*
