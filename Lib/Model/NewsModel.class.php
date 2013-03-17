@@ -4,18 +4,15 @@ class NewsModel extends Model {
 
     const STATUS_ACTIVE = 'ACTIVE';
 
-<<<<<<< HEAD
-	// 自动验证
+// 自动验证
 	protected $_validate = array(
 		array('title', 'require', '标题必须填写', 1, 'regex', 1),
 		array('content', 'require', '内容必须填写', 1, 'regex', 1)
 	);
 
-	protected $_auto = array(
-=======
-    protected $_auto = array(
->>>>>>> 285361799de86ab459b9a1023b437305c8204f38
-        array('status', self::STATUS_ACTIVE),
+
+ protected $_auto = array(
+	 array('status', self::STATUS_ACTIVE),
         array('created_at', 'getCurrentDateTime', Model::MODEL_INSERT, 'function'),
         array('updated_at', 'getCurrentDateTime', Model::MODEL_BOTH, 'function')
     );
