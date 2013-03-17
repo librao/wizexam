@@ -69,9 +69,10 @@
         </div>
     </div>
 
+
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.1.min.js"></script>
 <!--
-    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/prettify.js"></script>
+	<script src="js/prettify.js"></script>
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/bootstrap-alert.js"></script>
     <script src="js/bootstrap-modal.js"></script>

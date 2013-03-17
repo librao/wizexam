@@ -14,6 +14,9 @@ class IndexAction extends GlobalAction {
 		$_GET['n_id'] = intval($_GET['n_id']);
 		$this->n_id = (isset($_GET['n_id']) && $_GET['n_id'] != null)?$_GET['n_id']:null;
 
+		$cate_array = array();
+		$this->assign('cate_array', $cate_array);
+
 		$this->assign('n_id', $this->n_id);
 	}
     /**
@@ -25,8 +28,8 @@ class IndexAction extends GlobalAction {
 		$news_model = new NewsModel();
 		
 		$news_list = $news_model->getNews();
-		dump($news_list);
-
+		//dump($news_list);
+		$this->assign('news_list', $news_list);
 		$this->_display('首页');
 	}
 
@@ -37,9 +40,9 @@ class IndexAction extends GlobalAction {
 		$news_model = new NewsModel();
 		
 		$news_info = $news_model->getDetail($this->n_id);
-		dump($news_info);
-
-		$this->_display('首页');
+		//dump($news_info);
+		$this->assign('news_info', $news_info);
+		$this->_display('祥情页');
 	}
 
 	/**

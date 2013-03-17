@@ -9,7 +9,7 @@ class CommonAction extends GlobalAction {
         parent::_initialize();
         
         if(!is_login()) {
-            $this->redirect('/login?request_url=admin2lib');
+            $this->redirect('/login');
             exit();
         }
     }

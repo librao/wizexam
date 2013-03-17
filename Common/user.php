@@ -40,4 +40,16 @@ function get_user_status_by_code($status_code){
 function get_uid(){
 	return intval(session('auth'));
 }
+
+/**
+ * 根据用户id返回用户信息
+ * @param int $uid		用户id
+ * @param string $type	返回信息
+ */
+function get_user_info($uid, $type = 'user_name'){
+	$user_model = M('User');
+	$where['id'] = array('eq', $uid);
+	$info = $user_model->where($where)->getField($type);
+	return $info;
+}
 ?>
