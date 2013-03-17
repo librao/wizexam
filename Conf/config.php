@@ -15,6 +15,7 @@ $config = array(
 	 	*/
 		// 后台首页
 		'admin2lib' => array('Admin/index'),
+		'edit' => array('Admin/edit'),
 	),
     'URL_MODEL' => 2
 );

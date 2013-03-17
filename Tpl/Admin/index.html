@@ -5,35 +5,53 @@
 </block>
 
 <block name="content">
-    <form action="{:U('Admin/insert')}" method="post" class="form-horizontal">
-        <div class="control-group">
-            <label class="control-label" for="inputTitle">Title</label>
-            <div class="controls">
-                <input type="text" id="inputTitle" name="title" placeholder="Title">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputSummary">Summary</label>
-            <div class="controls">
-                <textarea id="inputSummary" rows="3" name="summary"></textarea>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputContent">Content</label>
-            <div class="controls">
-                <textarea id="inputContent" style="width:520px; height: 200px" name="content"></textarea>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-large btn-primary">Post</button>
-            </div>
-        </div>
-    </form>
-</block>
+<div class="row">
+	<div class="span7">
+		<div class="my_block">
+			<span><a href="{:U('/edit')}" title="添加"><i class="icon-plus"></i>添加</a></span>
+			<table class="table table-bordered table-striped table_vam">
+				<thead>
+					<tr>
+						<th class="line_l" width="5%">ID</th>
+						<th class="line_l" width="25%">Title</th>
+						<th class="line_l" width="35%">Summary</th>
+						<th class="line_l" width="5%">View</th>
+						<th class="line_l" width="5%">Like</th>
+						<th class="line_l" width="25%">Creat Date</th>
+						<th class="line_l" width="15%">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="list" id="vo">
+					<tr>
+						<th class="line_l" width="5%">{$vo.id}</th>
+						<th class="line_l" width="15%">{$vo.title}</th>
+						<th class="line_l" width="15%">{$vo.summary}</th>
+						<th class="line_l" width="5%">{$vo.view}</th>
+						<th class="line_l" width="5%">{$vo.digg}</th>
+						<th class="line_l" width="15%">{$vo.created_at}</th>
+						<th class="line_l" width="15%">
+							<a href="{:U('/edit?nid='.$vo['id'])}" title="修改"><i class="icon-edit"></i></a>
+							<a href="" title="删除"><i class="icon-remove"></i></a>
+						</th>
+					</tr>
+					</volist>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 
-<block name="javascript">
-    <script type="text/javascript">
-        jQuery('#inputContent').wysihtml5();
-    </script>
+<div class="row">
+	<div class="span7">
+		<div class="my_block pag">
+			<button class="btn btn-inverse btn-small">Previous</button>
+			<button class="btn btn-info btn-small">1</button>
+			<button class="btn btn-inverse btn-small">2</button>
+			<button class="btn btn-inverse btn-small">3</button>
+			<button class="btn btn-inverse btn-small">4</button>
+			<button class="btn btn-inverse btn-small">Next</button>
+		</div>
+	</div>
+</div>
 </block>
