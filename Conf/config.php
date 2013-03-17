@@ -16,6 +16,7 @@ $config = array(
 		// 后台首页
 		'admin2lib' => array('Admin/Index/index'),
 	),
+    'URL_MODEL' => 2
 );
 
 return array_merge($db_config, $config);
