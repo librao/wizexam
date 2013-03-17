@@ -1,17 +1,35 @@
 <extend name="./Tpl/base.html" />
 <block name="content">
-<section>
-	<div id="portfolio" class="row">
-        
-		<volist name="list" id="vo">
-		<div class="span3 block">
-			<div class="descr">
-				<h4><a href="/detail/{$vo.id}">{$vo.title}</a></h4>
-				<p>{$vo.summary}</p>
-			 </div>
-		</div>
-		</volist>
+    <section>
+        <div class="row">
+            <volist name="list" id="vo">
+                <div class="span7">
+                    <h4><a href="/detail/{$vo.id}">{$vo.title}</a>&nbsp;&nbsp;<button class="btn btn-mini fn_digg" type="button" newsId="{$vo.id}" digg="{$vo.digg}">Digg {$vo.digg}</button></h4>
+                    <div class="created_at">{$vo.created_at}</div>
+                    <p>{$vo.summary}<a href="/detail/{$vo.id}">[Read More]</a></p>
+                    <hr />
+                </div>
+            </volist>
+        </div>
+    </section>
+</block>
 
-	</div>
-</section>
+<block name="javascript">
+    <script type="text/javascript">
+        $('button.fn_digg').one('click', function(){
+            var newsId = $(this).attr('newsId');
+            var that = $(this);
+            var url = '{:U('Ajax/digg')}';
+            $.post(url, {'id': newsId}, function(json){
+                if(json.status){
+                    var digg = parseInt(that.attr('digg')) + 1;
+                    var html = 'Digg ' + digg;
+                    that.addClass('btn-success');
+                    that.attr('digg', digg);
+                    that.html(html);
+                }
+            }, 'json');
+            return false;
+        });
+    </script>
 </block>

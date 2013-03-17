@@ -30,3 +30,7 @@ body {
 .marketing p + h4 {
     margin-top: 28px;
 }
+
+div.created_at{
+    line-height: 24px;
+}
